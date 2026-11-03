@@ -1,2 +1,2 @@
 # Sistem-Manajemen-Data-Pegawai
-Projek ini digunakan untuk keperluan mengerjakan Uji Kompetensi, untuk mendapatkan sertifikasi BNSP profesi Junior Web Programming (JWP). 
+Sistem Manajemen Data Pegawai merupakan aplikasi berbasis web yang dikembangkan untuk mempermudah proses pengelolaan informasi dan administrasi data pegawai secara terstruktur. Aplikasi ini dirancang sebagai proyek Uji Kompetensi Sertifikasi Junior Web Programming.
