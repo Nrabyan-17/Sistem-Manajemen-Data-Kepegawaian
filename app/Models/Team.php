@@ -96,6 +96,16 @@ class Team extends Model
     }
 
     /**
+     * Get all pegawai for this team.
+     *
+     * @return HasMany<Pegawai, $this>
+     */
+    public function pegawai(): HasMany
+    {
+        return $this->hasMany(Pegawai::class);
+    }
+
+    /**
      * Get the attributes that should be cast.
      *
      * @return array<string, string>
