@@ -34,7 +34,7 @@ Stack yang direkomendasikan untuk proyek ini:
 | Laravel | Framework backend, routing, validasi, dan pengelolaan data |
 | Inertia.js | Penghubung Laravel dengan frontend React tanpa perlu membangun REST API terpisah untuk kebutuhan halaman aplikasi |
 | React | Membangun antarmuka pengguna yang interaktif |
-| Database relasional | Menyimpan data pegawai (misalnya MySQL atau PostgreSQL) |
+| PostgreSQL | Database untuk menyimpan data pegawai |
 | Vite | Menjalankan proses development dan build aset frontend |
 
 **Penting:** sesuaikan tabel teknologi ini dengan teknologi dan versi yang benar-benar digunakan di repository. Tambahkan library grafik dan UI yang digunakan setelah pilihannya sudah ditetapkan.
@@ -57,7 +57,7 @@ Pastikan perangkat pengembangan telah memiliki perangkat berikut:
 - PHP dengan versi yang sesuai dengan versi Laravel pada proyek.
 - Composer.
 - Node.js dan npm.
-- MySQL atau PostgreSQL, sesuai konfigurasi database proyek.
+- PostgreSQL.
 - Git.
 
 Periksa dokumentasi resmi Laravel untuk persyaratan versi PHP dan ekstensi yang dibutuhkan oleh versi Laravel yang digunakan.
@@ -161,4 +161,4 @@ Proyek ini dikembangkan untuk memenuhi kebutuhan Uji Kompetensi Sertifikasi Juni
 
 ## Pengembang
 
-Dibuat oleh Naufal Rizki Abyan.
+Dikembangkan oleh Naufal Rizki Abyan.
