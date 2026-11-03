@@ -20,28 +20,37 @@ export default function AuthCardLayout({
     description?: string;
 }>) {
     return (
-        <div className="flex min-h-svh flex-col items-center justify-center gap-6 bg-muted p-6 md:p-10">
-            <div className="flex w-full max-w-md flex-col gap-6">
-                <Link
-                    href={home()}
-                    className="flex items-center gap-2 self-center font-medium"
-                >
-                    <div className="flex h-9 w-9 items-center justify-center">
-                        <AppLogoIcon className="size-9 fill-current text-black dark:text-white" />
-                    </div>
-                </Link>
+        <div className="flex min-h-svh flex-col items-center justify-center bg-slate-50/60 p-6 md:p-10 dark:bg-background">
+            <div className="flex w-full max-w-[420px] flex-col gap-6">
+                {/* Card Wrapper Component */}
+                <Card className="rounded-2xl border border-slate-200/80 bg-white p-2 sm:p-4 shadow-xl shadow-slate-200/40 dark:border-neutral-800 dark:bg-neutral-900 dark:shadow-none">
+                    <CardHeader className="flex flex-col items-center px-6 pt-6 pb-2 text-center">
+                        {/* Brand Logo & Name INSIDE Card */}
+                        <Link
+                            href={home()}
+                            className="mb-3 flex flex-col items-center gap-2 transition hover:opacity-90"
+                        >
+                            <div className="flex size-12 items-center justify-center rounded-xl bg-blue-600 text-white shadow-md shadow-blue-500/25">
+                                <AppLogoIcon className="size-6 text-white" />
+                            </div>
+                            <span className="text-xs font-semibold tracking-tight text-slate-700 dark:text-neutral-300">
+                                Sistem Manajemen Kepegawaian
+                            </span>
+                        </Link>
 
-                <div className="flex flex-col gap-6">
-                    <Card className="rounded-xl">
-                        <CardHeader className="px-10 pt-8 pb-0 text-center">
-                            <CardTitle className="text-xl">{title}</CardTitle>
-                            <CardDescription>{description}</CardDescription>
-                        </CardHeader>
-                        <CardContent className="px-10 py-8">
-                            {children}
-                        </CardContent>
-                    </Card>
-                </div>
+                        <CardTitle className="text-xl font-bold tracking-tight text-slate-900 dark:text-neutral-100">
+                            {title}
+                        </CardTitle>
+                        {description && (
+                            <CardDescription className="text-xs text-slate-500 dark:text-neutral-400">
+                                {description}
+                            </CardDescription>
+                        )}
+                    </CardHeader>
+                    <CardContent className="px-6 py-6">
+                        {children}
+                    </CardContent>
+                </Card>
             </div>
         </div>
     );
