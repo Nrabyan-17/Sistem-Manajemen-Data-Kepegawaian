@@ -22,8 +22,8 @@ export default function AuthCardLayout({
     return (
         <div className="flex min-h-svh flex-col items-center justify-center bg-slate-50/60 p-6 md:p-10 dark:bg-background">
             <div className="flex w-full max-w-[420px] flex-col gap-6">
-                {/* Card Wrapper Component */}
-                <Card className="rounded-2xl border border-slate-200/80 bg-white p-2 sm:p-4 shadow-xl shadow-slate-200/40 dark:border-neutral-800 dark:bg-neutral-900 dark:shadow-none">
+                {/* Card Wrapper Component with Smooth Entrance Animation */}
+                <Card className="animate-auth-entrance rounded-2xl border border-slate-200/80 bg-white p-2 sm:p-4 shadow-xl shadow-slate-200/40 dark:border-neutral-800 dark:bg-neutral-900 dark:shadow-none">
                     <CardHeader className="flex flex-col items-center px-6 pt-6 pb-2 text-center">
                         {/* Brand Logo & Name INSIDE Card */}
                         <Link

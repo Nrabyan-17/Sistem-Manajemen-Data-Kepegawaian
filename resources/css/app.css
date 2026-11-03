@@ -185,3 +185,19 @@
         cursor: not-allowed !important;
     }
 }
+
+/* Animasi halus kemunculan kartu Sign-in dan Sign-up */
+@keyframes authCardEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(16px) scale(0.985);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.animate-auth-entrance {
+    animation: authCardEntrance 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
