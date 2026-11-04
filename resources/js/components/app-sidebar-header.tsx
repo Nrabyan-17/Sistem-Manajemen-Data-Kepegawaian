@@ -33,7 +33,7 @@ export function AppSidebarHeader({
                 <Breadcrumbs breadcrumbs={breadcrumbs} />
             </div>
             <time
-                className="ml-auto shrink-0 whitespace-nowrap text-xs font-bold text-muted-foreground sm:text-sm"
+                className="ml-auto shrink-0 whitespace-nowrap rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600 dark:bg-neutral-800 dark:text-neutral-300 sm:text-sm"
                 dateTime={currentTime?.toISOString()}
                 aria-live="polite"
             >
