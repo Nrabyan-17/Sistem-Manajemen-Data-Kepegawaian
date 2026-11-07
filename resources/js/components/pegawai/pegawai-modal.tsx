@@ -1,5 +1,5 @@
 import { useForm } from '@inertiajs/react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import InputError from '@/components/input-error';
 import { Button } from '@/components/ui/button';
 import {
@@ -28,6 +28,7 @@ export default function PegawaiModal({
     currentTeamSlug,
 }: Props) {
     const isEdit = Boolean(pegawai);
+    const [confirmationOpen, setConfirmationOpen] = useState(false);
 
     const { data, setData, post, put, processing, errors, reset, clearErrors } =
         useForm({
@@ -55,20 +56,27 @@ export default function PegawaiModal({
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
+        setConfirmationOpen(true);
+    };
 
+    const handleConfirm = () => {
         if (isEdit && pegawai) {
             put(`/${currentTeamSlug}/pegawai/${pegawai.id}`, {
                 onSuccess: () => {
+                    setConfirmationOpen(false);
                     onOpenChange(false);
                     reset();
                 },
+                onError: () => setConfirmationOpen(false),
             });
         } else {
             post(`/${currentTeamSlug}/pegawai`, {
                 onSuccess: () => {
+                    setConfirmationOpen(false);
                     onOpenChange(false);
                     reset();
                 },
+                onError: () => setConfirmationOpen(false),
             });
         }
     };
@@ -214,6 +222,49 @@ export default function PegawaiModal({
                     </DialogFooter>
                 </form>
             </DialogContent>
+
+            <Dialog open={confirmationOpen} onOpenChange={setConfirmationOpen}>
+                <DialogContent className="sm:max-w-[420px] dark:border-neutral-800 dark:bg-neutral-900">
+                    <DialogHeader>
+                        <DialogTitle className="text-lg font-bold text-slate-900 dark:text-neutral-100">
+                            {isEdit ? 'Konfirmasi Perubahan Data' : 'Konfirmasi Tambah Pegawai'}
+                        </DialogTitle>
+                        <DialogDescription className="text-sm leading-relaxed text-slate-600 dark:text-neutral-400">
+                            {isEdit
+                                ? 'Simpan perubahan data pegawai'
+                                : 'Tambahkan data pegawai'}{' '}
+                            <strong className="text-slate-900 dark:text-neutral-100">
+                                &quot;{data.nama || 'tanpa nama'}&quot;
+                            </strong>
+                            ?
+                        </DialogDescription>
+                    </DialogHeader>
+
+                    <DialogFooter className="gap-3 sm:gap-3">
+                        <Button
+                            type="button"
+                            variant="outline"
+                            onClick={() => setConfirmationOpen(false)}
+                            disabled={processing}
+                            className="border-slate-300 dark:border-neutral-700 dark:text-neutral-200"
+                        >
+                            Kembali
+                        </Button>
+                        <Button
+                            type="button"
+                            onClick={handleConfirm}
+                            disabled={processing}
+                            className="bg-blue-600 font-medium text-white hover:bg-blue-700"
+                        >
+                            {processing
+                                ? 'Menyimpan...'
+                                : isEdit
+                                  ? 'Ya, Simpan Perubahan'
+                                  : 'Ya, Tambahkan'}
+                        </Button>
+                    </DialogFooter>
+                </DialogContent>
+            </Dialog>
         </Dialog>
     );
 }

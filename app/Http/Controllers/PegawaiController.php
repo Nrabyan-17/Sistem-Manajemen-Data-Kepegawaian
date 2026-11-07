@@ -116,7 +116,7 @@ class PegawaiController extends Controller
     /**
      * Update the specified pegawai in storage.
      */
-    public function update(Request $request, Pegawai $pegawai): RedirectResponse
+    public function update(Request $request, string $current_team, Pegawai $pegawai): RedirectResponse
     {
         $team = $this->resolveTeam($request);
 
@@ -146,7 +146,7 @@ class PegawaiController extends Controller
     /**
      * Remove the specified pegawai from storage.
      */
-    public function destroy(Request $request, Pegawai $pegawai): RedirectResponse
+    public function destroy(Request $request, string $current_team, Pegawai $pegawai): RedirectResponse
     {
         $team = $this->resolveTeam($request);
 

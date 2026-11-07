@@ -138,13 +138,6 @@ export default function PegawaiIndex({
                         </p>
                     </div>
 
-                    <Button
-                        onClick={handleOpenAddModal}
-                        className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white shadow-md shadow-blue-500/20 hover:bg-blue-700 transition"
-                    >
-                        <Plus className="size-4" />
-                        <span>Tambah Pegawai</span>
-                    </Button>
                 </div>
 
                 {/* Filters & Search Card */}
@@ -202,7 +195,7 @@ export default function PegawaiIndex({
                         </div>
 
                         {/* Action buttons (Cari & Reset) */}
-                        <div className="flex gap-2">
+                        <div className="flex flex-wrap gap-2">
                             <Button
                                 onClick={() => applyFilters(search, gender, pendidikan)}
                                 variant="outline"
@@ -210,6 +203,13 @@ export default function PegawaiIndex({
                             >
                                 <Filter className="mr-1.5 size-3.5" />
                                 Terapkan
+                            </Button>
+                            <Button
+                                onClick={handleOpenAddModal}
+                                className="flex-1 bg-blue-600 text-white hover:bg-blue-700"
+                            >
+                                <Plus className="mr-1.5 size-4" />
+                                Tambah Pegawai
                             </Button>
                             {(search || gender || pendidikan) && (
                                 <Button
