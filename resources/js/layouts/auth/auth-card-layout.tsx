@@ -30,8 +30,8 @@ export default function AuthCardLayout({
                             href={home()}
                             className="mb-3 flex flex-col items-center gap-2 transition hover:opacity-90"
                         >
-                            <div className="flex size-12 items-center justify-center rounded-xl bg-blue-600 text-white shadow-md shadow-blue-500/25">
-                                <AppLogoIcon className="size-6 text-white" />
+                            <div className="flex size-14 items-center justify-center overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-0.5 shadow-md shadow-slate-200/50 dark:border-neutral-700 dark:bg-neutral-800 dark:shadow-none">
+                                <AppLogoIcon className="size-full rounded-xl object-cover" />
                             </div>
                             <span className="text-xs font-semibold tracking-tight text-slate-700 dark:text-neutral-300">
                                 Sistem Manajemen Kepegawaian

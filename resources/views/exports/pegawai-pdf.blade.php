@@ -312,12 +312,8 @@
     <div class="page-container">
         <!-- Kop Surat -->
         <div class="kop-surat">
-            <div class="logo-box">
-                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="4" width="18" height="18" rx="3" ry="3"></rect>
-                    <line x1="9" y1="9" x2="15" y2="9"></line>
-                    <circle cx="12" cy="14" r="2.5"></circle>
-                </svg>
+            <div class="logo-box" style="overflow: hidden; padding: 0; background: transparent; border: 1px solid #cbd5e1;">
+                <img src="/ikon-data-pegawai.jpg" alt="Logo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px; display: block;">
             </div>
             <div class="kop-text">
                 <div class="kop-title">SISTEM MANAJEMEN DATA KEPEGAWAIAN</div>
