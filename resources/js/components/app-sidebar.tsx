@@ -1,5 +1,5 @@
 import { Link, usePage } from '@inertiajs/react';
-import { LayoutGrid, Users } from 'lucide-react';
+import { FileText, LayoutGrid, Users } from 'lucide-react';
 import AppLogo from '@/components/app-logo';
 import { NavMain } from '@/components/nav-main';
 import { NavUser } from '@/components/nav-user';
@@ -25,6 +25,9 @@ export function AppSidebar() {
     const pegawaiUrl = currentTeam
         ? `/${currentTeam.slug}/pegawai`
         : '/';
+    const laporanUrl = currentTeam
+        ? `/${currentTeam.slug}/laporan`
+        : '/';
 
     const mainNavItems: NavItem[] = [
         {
@@ -36,6 +39,11 @@ export function AppSidebar() {
             title: 'Data Pegawai',
             href: pegawaiUrl,
             icon: Users,
+        },
+        {
+            title: 'Laporan',
+            href: laporanUrl,
+            icon: FileText,
         },
     ];
 

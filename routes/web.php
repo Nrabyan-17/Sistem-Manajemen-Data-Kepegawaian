@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\Teams\TeamInvitationController;
 use App\Http\Middleware\EnsureTeamMembership;
@@ -27,6 +28,11 @@ Route::prefix('{current_team}')
         Route::post('pegawai', [PegawaiController::class, 'store'])->name('pegawai.store');
         Route::put('pegawai/{pegawai}', [PegawaiController::class, 'update'])->name('pegawai.update');
         Route::delete('pegawai/{pegawai}', [PegawaiController::class, 'destroy'])->name('pegawai.destroy');
+
+        // Laporan & Ekspor Data (PDF & Excel)
+        Route::get('laporan', [LaporanController::class, 'index'])->name('laporan.index');
+        Route::get('laporan/excel', [LaporanController::class, 'exportExcel'])->name('laporan.excel');
+        Route::get('laporan/pdf', [LaporanController::class, 'previewPdf'])->name('laporan.pdf');
     });
 
 Route::middleware(['auth'])->group(function () {
