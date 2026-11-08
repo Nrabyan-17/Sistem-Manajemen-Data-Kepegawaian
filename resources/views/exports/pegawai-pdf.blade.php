@@ -296,14 +296,14 @@
     <!-- Floating Action Bar -->
     <div class="action-bar">
         <div class="info">
-            📄 Pratinjau Cetak / Ekspor PDF &bull; <strong>{{ $data->count() }} Pegawai</strong>
+            Pratinjau Cetak / Ekspor PDF &bull; <strong>{{ $data->count() }} Pegawai</strong>
         </div>
         <div class="buttons">
             <button onclick="window.print()" class="btn btn-primary">
-                🖨️ Cetak / Simpan PDF
+                Cetak / Simpan PDF
             </button>
             <button onclick="window.close()" class="btn btn-outline">
-                ✕ Tutup
+                Tutup
             </button>
         </div>
     </div>
@@ -416,7 +416,7 @@
         <!-- Kolom Pengesahan Tanda Tangan -->
         <div class="signature-section">
             <div class="signature-box">
-                <div class="signature-date">Jakarta, {{ \Carbon\Carbon::now()->translatedFormat('d F Y') }}</div>
+                <div class="signature-date">Surabaya, {{ \Carbon\Carbon::now()->translatedFormat('d F Y') }}</div>
                 <div class="signature-role">Pimpinan / Kepala Divisi HRD</div>
                 <div class="signature-name">{{ auth()->user()->name }}</div>
                 <div class="signature-nip">NIP: 19850712 201001 1 004</div>
