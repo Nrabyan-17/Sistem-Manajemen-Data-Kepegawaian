@@ -76,6 +76,11 @@ export default function PegawaiIndex({
         }
     };
 
+    const handleClearSearch = () => {
+        setSearch('');
+        applyFilters('', gender, pendidikan);
+    };
+
     const handleResetFilters = () => {
         setSearch('');
         setGender('');
@@ -142,22 +147,35 @@ export default function PegawaiIndex({
 
                 {/* Filters & Search Card */}
                 <div className="rounded-2xl border border-slate-200/80 bg-white p-4 shadow-sm dark:border-neutral-800 dark:bg-neutral-900">
-                    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-12">
                         {/* Search Input */}
-                        <div className="relative">
-                            <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-slate-400 dark:text-neutral-500" />
+                        <div className="relative sm:col-span-2 lg:col-span-4">
+                            <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                                <Search className="size-4 text-slate-400 dark:text-neutral-500" />
+                            </div>
                             <Input
                                 type="text"
                                 placeholder="Cari nama pegawai... (Enter)"
                                 value={search}
                                 onChange={(e) => setSearch(e.target.value)}
                                 onKeyDown={handleSearchKeyDown}
-                                className="h-10 pl-9 border-slate-300 text-sm focus:border-blue-500 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
+                                className="h-10 pl-9 pr-9 border-slate-300 text-sm focus:border-blue-500 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
                             />
+                            {search && (
+                                <button
+                                    type="button"
+                                    onClick={handleClearSearch}
+                                    title="Reset pencarian"
+                                    aria-label="Reset pencarian"
+                                    className="absolute inset-y-0 right-0 flex items-center pr-3 text-slate-400 hover:text-slate-600 dark:text-neutral-500 dark:hover:text-neutral-300 cursor-pointer"
+                                >
+                                    <RotateCcw className="size-4 transition-transform hover:rotate-180 duration-300" />
+                                </button>
+                            )}
                         </div>
 
                         {/* Filter Gender */}
-                        <div>
+                        <div className="lg:col-span-2">
                             <select
                                 value={gender}
                                 onChange={(e) => {
@@ -176,7 +194,7 @@ export default function PegawaiIndex({
                         </div>
 
                         {/* Filter Pendidikan */}
-                        <div>
+                        <div className="lg:col-span-2">
                             <select
                                 value={pendidikan}
                                 onChange={(e) => {
@@ -194,8 +212,8 @@ export default function PegawaiIndex({
                             </select>
                         </div>
 
-                        {/* Action buttons (Cari & Reset) */}
-                        <div className="flex flex-wrap gap-2">
+                        {/* Action buttons (Terapkan & Reset) */}
+                        <div className="flex items-center gap-2 lg:col-span-2">
                             <Button
                                 onClick={() => applyFilters(search, gender, pendidikan)}
                                 variant="outline"
@@ -204,24 +222,28 @@ export default function PegawaiIndex({
                                 <Filter className="mr-1.5 size-3.5" />
                                 Terapkan
                             </Button>
-                            <Button
-                                onClick={handleOpenAddModal}
-                                className="flex-1 bg-blue-600 text-white hover:bg-blue-700"
-                            >
-                                <Plus className="mr-1.5 size-4" />
-                                Tambah Pegawai
-                            </Button>
                             {(search || gender || pendidikan) && (
                                 <Button
                                     onClick={handleResetFilters}
                                     variant="ghost"
                                     size="icon"
-                                    title="Reset Filter"
-                                    className="text-slate-500 hover:text-slate-800 dark:text-neutral-400 dark:hover:text-neutral-200"
+                                    title="Reset Semua Filter"
+                                    className="shrink-0 text-slate-500 hover:bg-slate-100 hover:text-slate-800 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-200"
                                 >
                                     <RotateCcw className="size-4" />
                                 </Button>
                             )}
+                        </div>
+
+                        {/* Tambah Pegawai Button */}
+                        <div className="lg:col-span-2">
+                            <Button
+                                onClick={handleOpenAddModal}
+                                className="w-full bg-blue-600 text-white hover:bg-blue-700"
+                            >
+                                <Plus className="mr-1.5 size-4" />
+                                Tambah Pegawai
+                            </Button>
                         </div>
                     </div>
                 </div>
