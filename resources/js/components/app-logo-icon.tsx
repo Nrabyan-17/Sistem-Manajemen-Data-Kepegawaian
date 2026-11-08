@@ -7,9 +7,9 @@ export default function AppLogoIcon({
 }: ImgHTMLAttributes<HTMLImageElement>) {
     return (
         <img
-            src="/ikon-data-pegawai.jpg"
+            src="/ikon-data-pegawai-removebg-preview.png"
             alt={alt}
-            className={`object-cover ${className}`}
+            className={`object-contain ${className}`}
             {...props}
         />
     );

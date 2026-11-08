@@ -312,8 +312,8 @@
     <div class="page-container">
         <!-- Kop Surat -->
         <div class="kop-surat">
-            <div class="logo-box" style="overflow: hidden; padding: 0; background: transparent; border: 1px solid #cbd5e1;">
-                <img src="/ikon-data-pegawai.jpg" alt="Logo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px; display: block;">
+            <div class="logo-box" style="overflow: hidden; padding: 2px; background: #ffffff; border: 1px solid #cbd5e1;">
+                <img src="/ikon-data-pegawai-removebg-preview.png" alt="Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px; display: block;">
             </div>
             <div class="kop-text">
                 <div class="kop-title">SISTEM MANAJEMEN DATA KEPEGAWAIAN</div>

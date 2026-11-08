@@ -17,8 +17,8 @@ export default function AuthSimpleLayout({
                             href={home()}
                             className="flex flex-col items-center gap-2 font-medium"
                         >
-                            <div className="mb-1 flex size-14 items-center justify-center overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-0.5 shadow-md shadow-slate-200/50 dark:border-neutral-700 dark:bg-neutral-800 dark:shadow-none">
-                                <AppLogoIcon className="size-full rounded-xl object-cover" />
+                            <div className="mb-1 flex size-14 items-center justify-center overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-1.5 shadow-md shadow-slate-200/50 dark:border-neutral-700 dark:bg-neutral-800 dark:shadow-none">
+                                <AppLogoIcon className="size-full rounded-xl object-contain" />
                             </div>
                             <span className="text-base font-bold text-foreground">
                                 Sistem Manajemen Kepegawaian

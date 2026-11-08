@@ -97,8 +97,8 @@ export function AppHeader({ breadcrumbs = [] }: Props) {
                                 </SheetTitle>
                                 <SheetHeader className="flex justify-start text-left">
                                     <div className="flex items-center gap-2">
-                                        <div className="flex aspect-square size-8 items-center justify-center overflow-hidden rounded-lg border border-slate-200/80 bg-white shadow-xs dark:border-neutral-700/80 dark:bg-neutral-800">
-                                            <AppLogoIcon className="size-full object-cover" />
+                                        <div className="flex aspect-square size-8 items-center justify-center overflow-hidden rounded-lg border border-slate-200/80 bg-white p-0.5 shadow-xs dark:border-neutral-700/80 dark:bg-neutral-800">
+                                            <AppLogoIcon className="size-full object-contain" />
                                         </div>
                                         <span className="text-xs font-semibold leading-tight tracking-tight text-sidebar-foreground">
                                             Sistem Manajemen Kepegawaian

@@ -29,8 +29,8 @@
             }
         </style>
 
-        <link rel="icon" href="/ikon-data-pegawai.jpg" type="image/jpeg">
-        <link rel="apple-touch-icon" href="/ikon-data-pegawai.jpg">
+        <link rel="icon" href="/ikon-data-pegawai-removebg-preview.png" type="image/png">
+        <link rel="apple-touch-icon" href="/ikon-data-pegawai-removebg-preview.png">
 
         @fonts
 
