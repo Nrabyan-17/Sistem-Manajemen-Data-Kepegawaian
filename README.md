@@ -161,4 +161,4 @@ Proyek ini dikembangkan untuk memenuhi kebutuhan Uji Kompetensi Sertifikasi Juni
 
 ## Pengembang
 
-Dikembangkan oleh Naufal Rizki Abyan.
+Dikembangkan oleh Naufal Rizki Abyan sebagai developer.
